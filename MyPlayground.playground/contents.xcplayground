@@ -11,5 +11,8 @@
         <page name='合并二叉树'/>
         <page name='maskLayer'/>
         <page name='串联所有单词的字串'/>
+        <page name='1028.从先序遍历还原二叉树'/>
+        <page name='剑指offer'/>
+        <page name='排序算法'/>
     </pages>
 </playground>

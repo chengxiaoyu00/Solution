@@ -11,27 +11,27 @@ import Foundation
 //
 //}
 //
-let queue = DispatchQueue(label: "com.xiaoyu.queue",qos:.utility ,attributes: .concurrent)
-var isback = false
-queue.sync {
-    for i in 0..<10 {
-        print("🌈",i,"当前线程: \(Thread.current)")
-    }
-}
-
-print("🐒当前线程: \(Thread.current)")
-print("🐒")
-queue.async {
-    for i in 0..<10 {
-        print("🌈-",i,"当前线程: \(Thread.current)")
-    }
-}
+//let queue = DispatchQueue(label: "com.xiaoyu.queue",qos:.utility ,attributes: .concurrent)
+//var isback = false
+//queue.sync {
+//    for i in 0..<10 {
+//        print("🌈",i,"当前线程: \(Thread.current)")
+//    }
+//}
+//
+//print("🐒当前线程: \(Thread.current)")
+//print("🐒")
+//queue.async {
+//    for i in 0..<10 {
+//        print("🌈-",i,"当前线程: \(Thread.current)")
+//    }
+//}
 //DispatchQueue.main.async {
 //    isback = true
 //}
-queue.sync {
-    isback = true
-}
+//queue.sync {
+//    isback = true
+//}
 //DispatchQueue.main.async {
 //    DispatchQueue.main.async {
 //        sleep(2)
@@ -186,3 +186,40 @@ queue.sync {
 ////sleep(UInt32(7))
 //isUpdata = false
 //vvvv.operationQueue.addOperation(operation4)
+
+class test:NSObject {
+    let queue = DispatchQueue(label: "com.xiaoyu.queue",qos:.utility ,attributes: .concurrent)
+    func op() {
+        
+//        queue.async {
+//
+//
+//             debugPrint("CXY-P: 1")
+//            self.perform(#selector(self.test), with: nil, afterDelay: 1.0)
+//            debugPrint("CXY-P: 3")
+//            self.perform(#selector(self.test), with: nil, afterDelay: 2.0)
+//            let runl = RunLoop.current
+//            runl.run(until: Date.init(timeIntervalSinceNow: 3))
+////            debugPrint("CXY-P:当前线程",Thread.current,runl)
+//            self.perform(#selector(self.test), with: nil, afterDelay: 1.0)
+//
+//            debugPrint("CXY-P: 4")
+//
+//        }
+        
+        
+        let stringArray:[String] = []
+        let stringArray2 = stringArray.map { (c) -> String in
+            return c
+        }.joined(separator: ",")
+        debugPrint(stringArray2.isEmpty)
+
+    }
+    
+    @objc func test() {
+        debugPrint("CXY-P:2")
+    }
+
+}
+
+test().op()
