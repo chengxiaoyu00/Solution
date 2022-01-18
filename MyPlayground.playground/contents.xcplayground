@@ -14,5 +14,7 @@
         <page name='1028.从先序遍历还原二叉树'/>
         <page name='剑指offer'/>
         <page name='排序算法'/>
+        <page name='数字之和'/>
+        <page name='力扣中等'/>
     </pages>
 </playground>
